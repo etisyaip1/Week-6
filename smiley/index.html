@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #mySprite {
+      width: 50px;
+      height: 50px;
+      background-color: darkblue;
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div id="mySprite"></div>
+
+<script>
+  let sprite = document.getElementById("mySprite");
+  let positionX = 0;
+  let positionY = 0;
+
+  function moveSprite() {
+    positionX += 10;
+    positionY += 10;
+    sprite.style.left = positionX + "px";
+    sprite.style.top = positionY + "px";
+
+    if (positionX < window.innerWidth - 50 && positionY < window.innerHeight - 50) {
+      requestAnimationFrame(moveSprite);
+    }
+  }
+
+  moveSprite();
+</script>
+
+</body>
+</html>
